@@ -1,0 +1,7 @@
+#Theos
+#
+_
+build
+theos
+.theos
+.DS_Store
