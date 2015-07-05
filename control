@@ -1,0 +1,9 @@
+Package: me.freemanrepo.translock
+Name: libTransLock
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: Majd Alfhaily <freemanrepo@me.com>
+Author: Majd Alfhaily <freemanrepo@me.com>
+Section: Tweaks
